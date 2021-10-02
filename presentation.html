@@ -1,0 +1,201 @@
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>A Free/Open-Source Morphological Analyser and Generator for Sakha</title>
+
+		<meta name="description" content="A Free/Open-Source Morphological Analyser and Generator for Sakha">
+		<meta name="author" content="Sardana Ivanova and Francis M. Tyers and Jonathan North Washington">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- , maximum-scale=1.0, user-scalable=no" -->
+
+		<link rel="stylesheet" href="./reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="./reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="./reveal.js/dist/theme/league.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="./reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+		<!-- link rel="stylesheet" href="./reveal.js/lib/css/zenburn.css" -->
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? './reveal.js/css/print/pdf.scss' : './reveal.js/css/print/paper.scss';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" href="jnw-overrides.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+				<section id="title" data-state="no-toc-progress">
+					<style>.header1 header:after { content: "Header 1 Example"; }</style>
+					<h1><div style="margin-bottom: 0.5em !important ;">A Free/Open-Source<br />Morphological Analyser and Generator<br />for Sakha</div></h1>
+					<div style="padding-top:0in; padding-bottom: 0.25in;">
+						<!-- h3 -->
+						<div style="width: 100%; padding-bottom: 0.25in;">
+							<div style="width: 32%; float: left;">
+								<img style="width: 5.5em; height: 5.5em;" src="img/pic_Sardana.jpg"/><br />
+								<b>Sardana Ivanova</b>¹
+							</div>
+						<!-- /h3-->
+							<div style="width: 32%; float: left;">
+								<img style="width: 5.5em; height: 5.5em;" src="img/pic_Fran.jpg"/><br />
+								Francis M. Tyers²<sup>,</sup>³
+							</div>
+							<div style="width: 32%; float: left;">
+								<img style="width: 5.5em; height: 5.5em;" src="img/pic_JNW.jpg"/><br />
+								Jonathan&nbsp;N.&nbsp;Washington⁴
+							</div>
+							<div style="clear: both"></div>
+						</div>
+						<ol class="shrink">
+							<li>Helsingin yliopisto, Suomi</li>
+							<li>Indiana University, USA</li>
+							<li><span class="cyrillic">Высшая Школа Экономики, Москва</span></li>
+							<li>Swarthmore College, USA</li>
+						</ol>
+					</div>
+						<img class="noframe" src="img/University_of_Helsinki.svg" style="height: 5em;"/>
+						<img class="noframe" src="img/swarthmorelogowhite.svg" style="height: 5em;"/>
+						<img class="noframe" src="img/iu_trident_web_crimson.svg" style="height: 5em;"/>
+						<img class="noframe" src="img/logo_hse.svg" style="height: 5em;"/>
+						<img class="noframe" src="img/Apertium_logo_darkbg.svg" style="height: 5em;"/>
+				</section>
+
+
+				<section>
+					<h2>Overview</h2>
+					<div class="float-left">
+					<div class="box">
+						<p class="bbb">Our talk in a nutshell</p>
+						<p>We developed a <span class="highlight">free/open source</span> morphological analyser and generator for <span class="highlight"/>Sakha</span></p>
+						<!-- ul -->
+							<!-- li>Turkic non-finite verb forms often argued to be multifunctional</li -->
+							<!-- li>Commonly assumed multifunctionality of Turkic non-finite verb forms does not hold</li>
+							<ul>
+								<li>Conflates important distinctions</li>
+								<li>Too few categories</li>
+							</ul>
+							<li>Proposal for novel delineation</li>
+						</ul -->
+					</div>
+					</div>
+					<div class="float-right"><!--  style="margin-top: 1em;" --> <!-- #padding-top: 10pt     | to make the top vertically align with the other box -->
+					<div class="box">
+					<p class="bbb">The next ~18 minutes:</p>
+					<ul>
+						<li>Background</li>
+						<ul>
+							<li>Sakha</li>
+							<li>Morphological tranducers</li>
+						</ul>
+						<li>Implementation and Challenges</li>
+						<li>Evaluation</li>
+						<li>Future work</li>
+						<li>Conclusion</li>
+					</ul>
+					</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Background</h2>
+					<ul>
+						<li></li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- script src="./reveal.js/lib/js/head.min.js"></script -->
+		<script src="./reveal.js/dist/reveal.js"></script>
+		<script src="./reveal.js/plugin/notes/notes.js"></script>
+		<script src="./reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				history: true,
+				hash: true,
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1280, //960,
+				//height: 720, //700,
+				height: 1024,
+				//width: 960,
+				//height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 1.0,
+
+				//theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Shows the slide number using default formatting
+				//Reveal.configure({ slideNumber: true });
+				//slideNumber: true,
+
+				//if true (default), fragments are generated on separate pages of pdfs
+				//pdfSeparateFragments: false,
+
+				// Slide number formatting can be configured using these variables:
+				//  "h.v":  horizontal . vertical slide number (default)
+				//  "h/v":  horizontal / vertical slide number
+				//    "c":  flattened slide number
+				//  "c/t":  flattened slide number / total slides
+				//Reveal.configure({ slideNumber: 'c' });
+				slideNumber: 'c',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional reveal.js plugins
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				/***
+				dependencies: [
+					{ src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: './reveal.js/plugin/highlight/highlight.js' },
+					{ src: './reveal.js/plugin/search/search.js', async: true },
+					{ src: './reveal.js/plugin/zoom-js/zoom.js', async: true },
+					{ src: './reveal.js/plugin/notes/notes.js', async: true }
+				]
+				***/
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealZoom, RevealHighlight, RevealNotes ]
+			});
+
+		</script>
+
+	</body>
+</html>
