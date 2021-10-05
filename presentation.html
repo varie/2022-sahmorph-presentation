@@ -13,7 +13,7 @@
 
 		<link rel="stylesheet" href="./reveal.js/dist/reset.css">
 		<link rel="stylesheet" href="./reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="./reveal.js/dist/theme/league.css" id="theme">
+		<link rel="stylesheet" href="./reveal.js/dist/theme/white.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="./reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
@@ -42,13 +42,13 @@
 
 				<section id="title" data-state="no-toc-progress">
 					<style>.header1 header:after { content: "Header 1 Example"; }</style>
-					<h1><div style="margin-bottom: 0.5em !important ;">A Free/Open-Source<br />Morphological Analyser and Generator<br />for Sakha</div></h1>
+					<h1><div style="margin-bottom: 0.5em !important ;">A Prototype Free/Open-Source<br />Morphological Analyser and Generator for Sakha</div></h1>
 					<div style="padding-top:0in; padding-bottom: 0.25in;">
 						<!-- h3 -->
 						<div style="width: 100%; padding-bottom: 0.25in;">
 							<div style="width: 32%; float: left;">
 								<img style="width: 5.5em; height: 5.5em;" src="img/pic_SI.jpg"/><br />
-								<b>Sardana Ivanova</b>¹
+								Sardana Ivanova¹
 							</div>
 						<!-- /h3-->
 							<div style="width: 32%; float: left;">
@@ -68,7 +68,7 @@
 							<li>Swarthmore College, USA</li>
 						</ol>
 					</div>
-						<img class="noframe" src="img/University_of_Helsinki.svg" style="height: 5em;"/>
+						<img class="noframe" src="img/University_of_Helsinki.svg" style="height: 4.5em;"/>
 						<img class="noframe" src="img/swarthmorelogowhite.svg" style="height: 5em;"/>
 						<img class="noframe" src="img/iu_trident_web_crimson.svg" style="height: 5em;"/>
 						<img class="noframe" src="img/logo_hse.svg" style="height: 5em;"/>
@@ -81,7 +81,7 @@
 					<div class="float-left">
 					<div class="box">
 						<p class="bbb">Our talk in a nutshell</p>
-						<p>We developed a <span class="highlight">free/open source</span> morphological analyser and generator for <span class="highlight"/>Sakha</span></p>
+						<p>We developed a prototype <span class="highlight">free/open source</span> morphological analyser and generator for <span class="highlight"/>Sakha</span></p>
 						<!-- ul -->
 							<!-- li>Turkic non-finite verb forms often argued to be multifunctional</li -->
 							<!-- li>Commonly assumed multifunctionality of Turkic non-finite verb forms does not hold</li>
@@ -95,7 +95,7 @@
 					</div>
 					<div class="float-right"><!--  style="margin-top: 1em;" --> <!-- #padding-top: 10pt     | to make the top vertically align with the other box -->
 					<div class="box">
-					<p class="bbb">The next ~18 minutes:</p>
+					<p class="bbb">The next 5 minutes:</p>
 					<ul>
 						<li>Background</li>
 						<ul>
@@ -104,8 +104,8 @@
 						</ul>
 						<li>Implementation and Challenges</li>
 						<li>Evaluation</li>
+            <li>Conclusion</li>
 						<li>Future work</li>
-						<li>Conclusion</li>
 					</ul>
 					</div>
 					</div>
@@ -113,11 +113,41 @@
 
 				<section>
 					<h2>Background</h2>
+          <h3>Sakha</h3>
+          <img src="img/Sakha.png" style="height: 10em;"><br />
 					<ul>
-						<li></li>
+						<li>Turkic language</li>
+            <li>Agglutinating, meaning words may be inflected using a series of affixes</li>
+            <li>Word order: Subject-Object-Verb</li>
+            <li>Backness and rounding vowel harmony systems</li>
 					</ul>
 				</section>
 
+        <section>
+					  <h2>Background</h2>
+            <h3>Morphological tranducers</h3>
+					  <ul>
+						    <li>Twofold function: morphological analysis and generation</li>
+                <li>Implemented as finite state transducers</li>
+                <li>Compiled from hand-coded lexical, morphotactic, and morphophonological generalisations</li>
+					  </ul>
+				</section>
+
+        <section>
+            <h2>Implementation and Challenges</h2>
+        </section>
+
+        <section>
+				    <h2>Evaluation</h2>
+        </section>
+
+        <section>
+				    <h2>Conclusion</h2>
+        </section>
+
+        <section>
+				    <h2>Future work</h2>
+        </section>
 			</div>
 		</div>
 
