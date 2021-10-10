@@ -184,6 +184,30 @@
 
         <section>
             <h2>Implementation and Challenges</h2>
+				<ul>
+					<li>Vowel harmony with diphthongs and long vowels</li>
+					<ul>
+						<li>Sakha long vowels (<arch>I</arch><arch>I</arch>, <arch>A</arch><arch>A</arch>) behave like short-vowel counterparts</li>
+						<li>Diphthongs (<arch>I</arch><arch>A</arch>) behave like high vowels<br/>(round after any round V, do not trigger rounding of low Vs)</li>
+						<li>Each <code>twol</code> harmony rule (char-to-char mapping): sensitivie to whether harmonising vowel is component of long vowel or dipthong or not</li>
+						<li>Many V harmony alternations required multiple rules to implement</li>
+					</ul>
+					<li>Two-directional consonant assimilation<br/>
+						e.g., /tutn-bIt-A/ ‘use-<gmk>past</gmk>-<gmk>3</gmk> realised as <span class="inln-ex">тутуммута</span> [tutummuta]</li>
+						<ul>
+							<li>/n/ triggers nasalisation of the following /b/</li>
+							<li>/b/ triggers labialisation of the preceding /n/</li>
+							<li>Mutual influence not problematic in <code>twol</code>: rule sensitive to underlying form of adjacent consonant, not surface form</li>
+						</ul>
+
+					<li><span class="highlight">Many alternations in a single stem</span>, each requiring ≥1 <code>twol</code> mapping, sensitive to the others &amp; to other parts of morphophonological context<br />
+						e.g., <span class="inln-ex"><span class="ulem">уһун</span></span> ‘swim[<gmk>imp</gmk>]’ / <span class="inln-ex"><span class="ulem">уст</span>ар</span> ‘swim-<gmk>pres</gmk>’</li>
+					<ul>
+						<li><code>с ~ Һ</code> — intervocalic lenition</li>
+						<li><code>н ~ т</code> — sonority restrictions</li>
+						<li><code><arch>I</arch> ~ ∅</code> — consonant cluster restrictions</li>
+					</ul>
+				</ul>
         </section>
 
 			<section>

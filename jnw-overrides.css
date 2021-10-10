@@ -407,6 +407,10 @@ morph {
 	text-decoration: underline ;
 }
 
+.ulem {
+	text-decoration: underline ; !important
+}
+
 /* language label */
 lg::before {
 	content: "(" ;
@@ -548,6 +552,13 @@ tt {
 
 .inline-ex {
 	color: lightgreen ;
+	font-family: "Linux Biolinum O" !important;
+	font-size: 110% !important ;
+	font-style: italic !important ;
+}
+
+.inln-ex {
+	color: blue ;
 	font-family: "Linux Biolinum O" !important;
 	font-size: 110% !important ;
 	font-style: italic !important ;
