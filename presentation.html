@@ -129,11 +129,11 @@
 
 				<section data-background="img/map.svg" data-background-position="left center" data-background-size="contain">
 					<div style="background-color: rgba(0.3, 0.3, 0.3, 0.4); transparency 50%; position: fixed; top: 0px; right: -7em; margin: 0 0 0 0; padding: 0.5em 0.5em 0.5em 0; color: black">
-						<ul style="list-style-type: none;">
+						<ul style="list-style-type: none;   text-shadow: 2px 2px 8px #FFFFFF;">
 							<li>Lena Turkic:</li>
 							<ul>
 								<li><span class="code">dlg</span> - Dolgan</li>
-								<li><span class="code"><b class="highlight-cyan">sah</b></span> - <b class="highlight-cyan">Sakha</b></li>
+								<li><span class="code"><b class="highlight-cyan" style="text-shadow: 2px 2px 8px #000000;">sah</b></span> - <b class="highlight-cyan" style="text-shadow: 2px 2px 8px #000000;">Sakha</b></li>
 							</ul>
 							<li>Sayan Turkic:</li>
 							<ul>
@@ -169,8 +169,8 @@
 					<h3>Morphological tranducers</h3>
 					<ul>
 						<li>Twofold function: morphological analysis and generation</li>
-						<li>Implemented as finite state transducers</li>
-						<li>Compiled from hand-coded lexical, morphotactic, and morphophonological generalisations</li>
+						<li>Implemented as finite state transducers (FST)</li>
+						<li>Compiled from <span class="highlight">hand-coded</span> lexical, morphotactic, and morphophonological generalisations</li>
 						<li>Only one development cycle</li>
 						<li>lots of uses!</li>
 						<ul>
@@ -183,10 +183,18 @@
             <h2>Implementation and Challenges</h2>
         </section>
 
-        <section>
-				    <h2>Evaluation</h2>
-            <h3>Coverage</h3>
-            <table style="width:100%">
+			<section>
+				<h2>Evaluation</h2>
+				<h3>Coverage</h3>
+				<div class="float-left">
+				<div class="box">
+					<ul>
+						<li><span class="highlight">Naïve coverage</span>: the number of forms in a corpus that receive an analysis, regardless of whether or not the analysis is correct (e.g., in context)</li>
+					</ul>
+				</div>
+				</div>
+				<div class="float-right" style="margin-top: 1em">
+            <table>
                 <tr>
                     <th>Corpus</th>
                     <th>Tokens</th>
@@ -194,24 +202,42 @@
                 </tr>
                 <tr>
                     <td>Wikipedia</td>
-                    <td>~2.59M</td>
-                    <td>88.79%</td>
+                    <td class="raln">~2.59M</td>
+                    <td class="raln">88.79%</td>
                 </tr>
                 <tr>
                     <td>Newspapers</td>
-                    <td>~16M</td>
-                    <td>87.68%</td>
+                    <td class="raln">~16M</td>
+                    <td class="raln">87.68%</td>
                 </tr>
             </table>
+				</div>
         </section>
 
         <section>
             <h2>Evaluation</h2>
             <h3>Precision & Recall</h3>
-            <ul>
-                <li>We selected 500 valid words of Sakha randomly from the Wikipedia corpus, ran them through the analyser, and manually annotated this list to create a gold standard.</li>
-            </ul>
-            <table style="width:100%">
+				<div>
+				<ul>
+					<li>created gold standard:</li>
+	            <ul>
+	                <li>500 valid words of Sakha</li>
+						 <li>randomly selected from Wikipedia corpus</li>
+						 <li>manually annotated output of transducer</li>
+	            </ul>
+				</ul>
+				</div>
+				<div class="float-left">
+				<div class="box">
+					<ul>
+						<li><span class="highlight">precision</span>: the number of analyses FIXME</li>
+						<li><span class="highlight">recall</span>: the number of analyses FIXME</li>
+					</ul>
+				</div>
+				</div>
+				<div class="float-right">
+				<div>results:</div>
+            <table>
                 <tr>
                     <th>Corpus</th>
                     <th>Precision</th>
@@ -219,10 +245,11 @@
                 </tr>
                 <tr>
                     <td>Wikipedia</td>
-                    <td>99.9%</td>
-                    <td>69.9%</td>
+                    <td class="raln">99.9%</td>
+                    <td class="raln">69.9%</td>
                 </tr>
             </table>
+				</div>
         </section>
 
         <section>
