@@ -114,7 +114,7 @@
 				<section>
 					<h2>Background</h2>
 					<h3>Sakha</h3>
-					<img src="img/Sakha.png" style="height: 10em;"><br />
+					<!-- <img src="img/Sakha.png" style="height: 10em;"><br /> -->
 					<ul>
 						<li>Turkic language</li>
 						<li>Spoken primarily in Siberia</li>
@@ -185,10 +185,51 @@
 
         <section>
 				    <h2>Evaluation</h2>
+            <h3>Coverage</h3>
+            <table style="width:100%">
+                <tr>
+                    <th>Corpus</th>
+                    <th>Tokens</th>
+                    <th>Coverage</th>
+                </tr>
+                <tr>
+                    <td>Wikipedia</td>
+                    <td>~2.59M</td>
+                    <td>88.79%</td>
+                </tr>
+                <tr>
+                    <td>Newspapers</td>
+                    <td>~16M</td>
+                    <td>87.68%</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Evaluation</h2>
+            <h3>Precision & Recall</h3>
+            <ul>
+                <li>We selected 500 valid words of Sakha randomly from the Wikipedia corpus, ran them through the analyser, and manually annotated this list to create a gold standard.</li>
+            </ul>
+            <table style="width:100%">
+                <tr>
+                    <th>Corpus</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                </tr>
+                <tr>
+                    <td>Wikipedia</td>
+                    <td>99.9%</td>
+                    <td>69.9%</td>
+                </tr>
+            </table>
         </section>
 
         <section>
 				    <h2>Future work</h2>
+            <ul>
+                <li>Add more lemmas</li>
+            </ul>
         </section>
 
 				<section>
