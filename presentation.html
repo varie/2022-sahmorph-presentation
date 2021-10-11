@@ -117,12 +117,12 @@
 					<!-- <img src="img/Sakha.png" style="height: 10em;"><br /> -->
 					<ul>
 						<li>Turkic language</li>
-						<li>Spoken primarily in Siberia</li>
 						<li>~450K speakers</li>
+						<li>Spoken primarily in Siberia</li>
 						<li>Entire area prone to economic and cultural effects of climate change</li>
-            <li>Agglutinating, meaning words may be inflected using a series of affixes</li>
-            <li>Word order: Subject-Object-Verb</li>
+            <li>Agglutinating — words may be inflected using a series of affixes</li>
             <li>Backness and rounding vowel harmony systems</li>
+            <li>Word order: Subject-Object-Verb</li>
 					</ul>
 				</section>
 
@@ -184,45 +184,113 @@
 
         <section>
             <h2>Existing Turkic transducers</h2>
-            <h3>Comparison of numbers of stems</h3>
-            <img class="noframe" src="img/lgs1.svg" style="height: 12em;"/>
-            <img class="noframe" src="img/lgs2.svg" style="height: 12em;"/>
-            <img class="noframe" src="img/lgs3.svg" style="height: 12em;"/>
-				<div>(Washington et al., 2019/2021), <a href="https://github.com/apertium">github.com/apertium</a>
+            <h3>Comparison of lexicon size</h3>
+					<div style="width: 30.5%; float:left;">
+						<img src="img/lgs1.svg" style="height: 12em;"/>
+						<span class="highlight-green">Production-level</span><br/>92%-98% coverage<br/>
+						<span style="font-size: 60%">(Tatar, Kazakh, Turkish, Kyrgyz, Crimean Tatar, Tuvan)</span>
+					</div>
+					<div style="width: 38%; float:left;">
+						<img src="img/lgs2.svg" style="height: 12em;"/>
+						<span class="highlight">Working</span><br/>88-93% coverage<br/>
+						<span style="font-size: 60%">(Bashqort, Chuvash, Uzbek, Qaraqalpaq, Uyghur, <span class="highlight"><b>Sakha</b></span>, Karachay-Balkar, Gagauz, Kumyk)</span>
+					</div>
+					<div style="width: 30.5%; float:left;">
+						<img src="img/lgs3.svg" style="height: 12em;"/>
+						<span class="highlight-red">Prototype</span><br/>&lt;80% coverage<br />
+						<span style="font-size: 60%">(Azerbaycani, Turkmen, Iraqi Türkman, Noghay, Khakas, Altay, Ottoman)</span>
+					</div>
+				<div>(Washington et al., 2019/2021), <a href="https://github.com/apertium">github.com/apertium</a></div>
         </section>
 
         <section>
             <h2>Implementation and Challenges</h2>
 				<h3>Vowel harmony with diphthongs and long vowels</h3>
+				<div class="box">
+					<h3>Problem:</h3>
 					<ul>
 						<li>Sakha long vowels (<arch>I</arch><arch>I</arch>, <arch>A</arch><arch>A</arch>) behave like short-vowel counterparts</li>
 						<li>Diphthongs (<arch>I</arch><arch>A</arch>) behave like high vowels<br/>(round after any round V, do not trigger rounding of low Vs)</li>
-						<li>Each <code>twol</code> harmony rule (char-to-char mapping): sensitivie to whether harmonising vowel is component of long vowel or dipthong or not</li>
+					</ul>
+				</div>
+				<div class="box">
+					<h3>Solution:</h3>
+					<ul>
+						<li>Each <code>twol</code> harmony rule (char-to-char mapping): sensitive to whether harmonising V is component of long V or dipthong or not</li>
 						<li>Many V harmony alternations required multiple rules to implement</li>
 					</ul>
+				</div>
 			</section>
 			<section>
             <h2>Implementation and Challenges</h2>
-					<h3>Two-directional consonant assimilation</h3>
-						<div>e.g., /tutn-bIt-A/ ‘use-<gmk>past</gmk>-<gmk>3</gmk> realised as <span class="inln-ex">тутуммута</span> [tutummuta]</div>
-						<ul>
-							<li>/n/ triggers nasalisation of the following /b/</li>
-							<li>/b/ triggers labialisation of the preceding /n/</li>
-							<li>Mutual influence not problematic in <code>twol</code>: rule sensitive to underlying form of adjacent consonant, not surface form</li>
-						</ul>
+				<h3>Two-directional consonant assimilation</h3>
+				<div class="box">
+					<h3>Problem:</h3>
+					<ul>
+						<li>forms like /tut<u>n-b</u>It-A/ ‘use-<gmk>past</gmk>-<gmk>3</gmk>’ realised as [tutu<u>mm</u>uta]<br/>
+						<span class="code">тут<arch>y</arch><u>н&gt;<arch>B</arch></u><arch>I</arch>т&gt;<arch>A</arch>:туту<u>мм</u>ута</span></li>
+						<li>/n/ triggers nasalisation of the following /b/</li>
+						<li>/b/ triggers labialisation of the preceding /n/</li>
+					</ul>
+				</div>
+				<div class="box">
+					<h3>Solution:</h3>
+					<ul>
+						<li>Mutual influence not problematic in <code>twol</code></li>
+						<li>rules are sensitive to <em>underlying form</em> (left side of <span class="code">:</span>) of adjacent symbol, not <em>surface form</em> (right side of <span class="code">:</span>)</li>
+					</ul>
+				</div>
 			</section>
 
 			<section>
             <h2>Implementation and Challenges</h2>
 					<h3>Many alternations in a single stem</h3>
-					<div>each requiring ≥1 <code>twol</code> mapping, sensitive to the others &amp; to other parts of morphophonological context</div>
-					<div>e.g., <span class="inln-ex"><span class="ulem">уһун</span></span> ‘swim[<gmk>imp</gmk>]’ / <span class="inln-ex"><span class="ulem">уст</span>ар</span> ‘swim-<gmk>pres</gmk>’</div>
-					<ul>
-						<li><code>с ~ Һ</code> — intervocalic lenition</li>
-						<li><code>н ~ т</code> — sonority restrictions</li>
-						<li><code><arch>I</arch> ~ ∅</code> — consonant cluster restrictions</li>
-					</ul>
+					<div class="box">
+						<h3>Problem:</h3>
+						<ul>
+							<li>forms like <span class="inln-ex"><span class="ulem">уһун</span></span> ‘swim[<gmk>imp</gmk>]’ / <span class="inln-ex"><span class="ulem">уст</span>ар</span> ‘swim-<gmk>pres</gmk>’</li>
+							<li>Several different alternations involved:</li>
+							<ul>
+								<li><code>с ~ Һ</code> — intervocalic lenition</li>
+								<li><code>н ~ т</code> — sonority restrictions</li>
+								<li><code><arch>I</arch> ~ ∅</code> — consonant cluster restrictions</li>
+							</ul>
+						</ul>
+					</div>
+					<div class="box">
+						<h3>Solution:</h3>
+						<ul>
+							<li>≥1 <code>twol</code> mapping for each alternation</li>
+							<li>each mapping sensitive to the others &amp; to other parts of morphophonological context</li>
+							<li><arch>y</arch> used for high vowel ~ ∅ alternation, as in previous work (Washington et al., 2019)</li>
+						</ul>
+					</div>
+
         </section>
+
+			<section>
+				<h2>Implementation and Challenges</h2>
+				<h3>Novel grammatical understanding</h3>
+				<div class="box">
+					<h3>Existing literature:</h3>
+					<ul>
+						<li>Sakha exhibits many <span class="highlight">non-finite verb forms</span></li>
+						<li>Some have finite uses</li>
+						<li>Generally categorised roughly as "participle" or "converb"</li>
+					</ul>
+				</div>
+				<div class="box">
+					<h3>Our contribution:</h3>
+					<ul>
+						<li>Categorised each form carefully based on uses:<br />
+						verbal noun, verbal adjective, verbal adverb, infinitive</li>
+						<li>Implemented each use separately</li>
+						<li>Results in some <span class="highlight">syncretism</span> (forms existing across multiple categories)</li>
+						<li>Concluded that there is not a strict participle/converb dichotomy</li>
+						<li>Documented in more detail in Washington et al. (2021)</li>
+					</ul>
+				</div>
+			</section>
 
 			<section>
 				<h2>Evaluation</h2>
@@ -230,7 +298,7 @@
 				<div class="float-left">
 				<div class="box">
 					<ul>
-						<li><span class="highlight">Naïve coverage</span>: the number of forms in a corpus that receive an analysis, regardless of whether or not the analysis is correct (e.g., in context)</li>
+						<li><span class="highlight">Naïve coverage</span>: <em>the number of forms in a corpus that receive an analysis, regardless of whether or not the analysis is correct (e.g., in context)</em></li>
 					</ul>
 				</div>
 				</div>
@@ -271,8 +339,8 @@
 				<div class="float-left">
 				<div class="box">
 					<ul>
-						<li><span class="highlight">precision</span>: the number of analyses FIXME</li>
-						<li><span class="highlight">recall</span>: the number of analyses FIXME</li>
+						<li><span class="highlight">precision</span>: percentage of analyses returned by the transducer that is correct</li>
+						<li><span class="highlight">recall</span>: percentage of the correct analyses that is returned</li>
 					</ul>
 				</div>
 				</div>
@@ -290,6 +358,7 @@
                     <td class="raln">69.9%</td>
                 </tr>
             </table>
+				<p class="shrink">i.e., nearly every form returned by the transducer was deemed correct, but many correct analyses were not returned by the transducer (mostly due to low coverage)</p>
 				</div>
         </section>
 
@@ -309,8 +378,16 @@
 							<li>high recall</li>
 							<li>moderate precision</li>
 						</ul>
+						<li>Ready for use in lots of language technology applications</li>
 						<li>Lots of room for improvement!</li>
 					</ul>
+					<div class="box fragment">
+						<div class="highlight">Махтанабыт!</div>
+						<ul>
+							<li>Fork at <a href="https://github.com/apertium/apertium-sah">github.com/apertium/apertium-sah</a></li>
+							<li>Try out at <a href="https://beta.apertium.org/#analysis?aLang=sah">beta.apertium.org</a></li>
+						</ul>
+					</div>
 				</section>
 
 			</div>

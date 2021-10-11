@@ -540,7 +540,7 @@ tt {
 	text-align: left ;
 }
 .box h3 {
-	border-bottom: 1px solid silver !important ;
+	border-bottom: 2px solid grey !important ;
 	font-family: "DejaVu Sans", "Liberation Sans", sans-serif !important ;
 	text-transform: none !important ;
 	text-shadow: none !important ;
