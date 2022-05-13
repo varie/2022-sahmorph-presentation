@@ -195,12 +195,12 @@
 					<div style="width: 30.5%; float:left;">
 						<img src="img/lgs1.svg" style="height: 12em;"/>
 						<span class="highlight-green">Production-level</span><br/>92%-98% coverage<br/>
-						<span style="font-size: 60%">(Tatar, Kazakh, Turkish, Kyrgyz, Crimean Tatar, Tuvan)</span>
+						<span style="font-size: 60%">(Tatar, <span class="highlight"><b>Sakha</b></span>, Kazakh, Turkish, Kyrgyz, Crimean Tatar, Tuvan)</span>
 					</div>
 					<div style="width: 38%; float:left;">
 						<img src="img/lgs2.svg" style="height: 12em;"/>
 						<span class="highlight">Working</span><br/>88-93% coverage<br/>
-						<span style="font-size: 60%">(Bashqort, Chuvash, Uzbek, Qaraqalpaq, Uyghur, <span class="highlight"><b>Sakha</b></span>, Karachay-Balkar, Gagauz, Kumyk)</span>
+						<span style="font-size: 60%">(Chuvash, Uzbek, Bashqort, Qaraqalpaq, Uyghur, Karachay-Balkar, Gagauz, Kumyk)</span>
 					</div>
 					<div style="width: 30.5%; float:left;">
 						<img src="img/lgs3.svg" style="height: 12em;"/>
@@ -208,7 +208,7 @@
 						<span style="font-size: 60%">(Azerbaycani, Turkmen, Iraqi Türkman, Noghay, Khakas, Altay, Ottoman)</span>
 					</div>
 				<div>(Washington et al., 2019/2021), <a href="https://github.com/apertium">github.com/apertium</a></div>
-				<div>Sakha: &gt;10 500 stems</div>
+				<div>Sakha: &gt;37 500 stems</div>
         </section>
 
 			<section>
@@ -353,20 +353,20 @@
                 <tr>
                     <td>Newspapers</td>
                     <td class="raln">~16M</td>
-                    <td class="raln">87.68%</td>
+                    <td class="raln">91.04%</td>
                 </tr>
                 <tr>
                     <td>Wikipedia</td>
-                    <td class="raln">~2.59M</td>
-                    <td class="raln">88.79%</td>
+                    <td class="raln">~2.4M</td>
+                    <td class="raln">91.30%</td>
                 </tr>
-					 <tr>
-					 	<td>New&nbsp;Testament</td>
-						<td class="raln">~190K</td>
-						<td class="raln">90.87%</td>
-					</tr>
+		<tr>
+		  <td>New&nbsp;Testament</td>
+		  <td class="raln">~190K</td>
+		  <td class="raln">94.53%</td>
+		</tr>
             </table>
-				<p class="shrink">Adequate coverage: robust morphology, but many missing stems</p>
+	    <p class="shrink">Solidly over 90% coverage: robust morphology</p>
 				</div>
         </section>
 
@@ -377,7 +377,7 @@
 				<ul>
 					<li>created gold standard:</li>
 	            <ul>
-	                <li>500 valid words of Sakha</li>
+	                <li>1000 valid words of Sakha</li>
 						 <li>randomly selected from Wikipedia corpus</li>
 						 <li>manually annotated output of transducer</li>
 	            </ul>
@@ -401,8 +401,8 @@
                 </tr>
                 <tr>
                     <td>Wikipedia</td>
-                    <td class="raln">99.9%</td>
-                    <td class="raln">69.9%</td>
+                    <td class="raln">98.52%</td>
+                    <td class="raln">75.42%</td>
                 </tr>
             </table>
 				<p class="shrink">i.e., nearly every form returned by the transducer was deemed correct, but many correct analyses were not returned by the transducer (mostly due to low coverage)</p>
@@ -412,7 +412,6 @@
 			<section>
 				<h2>Future work</h2>
 				<ul>
-					<li>Expand <span class="highlight">lexicon</span> (add more lemmas)</li>
 					<li>Correct minor issues in implementation of some <span class="highlight">morphophonological alternations</span><br/>
 					identified recently in data generation for a shared task (Pimentel et al., 2021)</li>
 					<li>Morphological/syntactic <span class="highlight">disambiguation</span></li>
